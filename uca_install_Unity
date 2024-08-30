@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# Create a directory for temporary files
+mkdir -p /Users/Shared/deploy
+chmod 777 ç
+cd /Users/Shared/deploy
+
+# Download the install-unity zip file
+curl -L https://github.com/sttz/install-unity/releases/download/2.12.1/install-unity-2.12.1.zip --output install-unity.zip
+
+# Unzip the file
+unzip install-unity.zip
+
+# Use install-unity to install the latest version of Unity
+/Users/Shared/deploy/install-unity install 6000.0.16f1
+
+# Clean up
+rm -rf /Users/Shared/deploy/install-unity.zip
+rm -rf /Users/Shared/deploy/install-unity
+
+exit 0
