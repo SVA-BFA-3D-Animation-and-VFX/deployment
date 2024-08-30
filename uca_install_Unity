@@ -2,7 +2,7 @@
 
 # Create a directory for temporary files
 mkdir -p /Users/Shared/deploy
-chmod 777 ç
+chmod 777 /Users/Shared/deploy
 cd /Users/Shared/deploy
 
 # Download the install-unity zip file
