@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure script is executable
+chmod +x "$0"
+
 # Get processor type
 if [[ $(uname -m) == 'arm64' ]]; then
     ARCH="arm64"
