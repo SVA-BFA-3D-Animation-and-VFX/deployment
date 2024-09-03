@@ -38,6 +38,6 @@ sudo rm /Applications/Maxon\ Cinema\ 4D\ 2023/resource/config.txt
 curl http://ucahub/config.txt --output /Applications/Maxon\ Cinema\ 4D\ 2023/resource/config.txt
 
 # Unity
-/Applications/Unity\ 6000.0/Unity.app/Contents/MacOS/Unity -quit -batchmode -serial E4-9RBC-K4XG-GPGE-UTPX-4BW7 -username 'svacomputerart-tech@sva.edu' -password 'S3rv3radm1n2023'
+/Applications/Unity\ 6000.0/Unity.app/Contents/MacOS/Unity -quit -batchmode -serial [unity_license_key] -username '[unity_email]' -password '[unity_password]’
 
 exit 0
