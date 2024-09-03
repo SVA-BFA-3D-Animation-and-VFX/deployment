@@ -6,19 +6,14 @@ chmod +x "$0"
 # Get processor type
 if [[ $(uname -m) == 'arm64' ]]; then
     ARCH="arm64"
+# Set Blender version and download URL 
     DOWNLOAD_URL="https://download.blender.org/release/Blender4.2/blender-4.2.1-macos-arm64.dmg"
 
 else
     ARCH="x64"
+# Set Blender version and download URL
     DOWNLOAD_URL="https://download.blender.org/release/Blender4.2/blender-4.2.1-macos-x64.dmg"
 fi
-
-# Set Blender version and download URL
-#BLENDER_VERSION="4.2.1"
-#DOWNLOAD_URL="https://www.blender.org/download/release/Blender${BLENDER_VERSION}/blender-${BLENDER_VERSION}-macos-${ARCH}.dmg"
-#BLENDER_VERSION="4.2.1"
-#DOWNLOAD_URL="https://download.blender.org/release/Blender4.2/blender-4.2.1-macos-${ARCH}.dmg" 
-
              
 # Download 
 echo "Downloading Blender for ${ARCH}..."
