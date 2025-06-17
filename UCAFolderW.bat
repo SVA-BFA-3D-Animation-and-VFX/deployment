@@ -2,8 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: Set the root directory to the location you want the folder to be created
-set "root=\\ucaprod\thesis\old\zlan"
-
+set "root=\\ucaprod\thesis\folderBox"
 :: Create first layer folders
 mkdir "%root%\asset"
 mkdir "%root%\editorial"
