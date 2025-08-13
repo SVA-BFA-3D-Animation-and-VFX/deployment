@@ -6,13 +6,19 @@ chmod 777 /Users/Shared/deploy
 cd /Users/Shared/deploy
 
 # Download the install-unity zip file
-curl -L https://github.com/sttz/install-unity/releases/download/2.12.1/install-unity-2.12.1.zip --output install-unity.zip
+curl -L https://github.com/sttz/install-unity/releases/download/2.13.1/install-unity-2.13.1.zip --output install-unity.zip
 
-# Unzip the file
+# Unzip the file / Make executable
 unzip install-unity.zip
 
-# Use install-unity to install the latest version of Unity
-/Users/Shared/deploy/install-unity install 6000.0.16f1
+chmod +x # /Users/Shared/deploy/install-unity
+
+# Use install-unity to download the latest version of Unity
+/Users/Shared/deploy/install-unity install 6000.1.16f1 --download --yes --data-path /Users/Shared/deploy/
+
+# install Unity
+
+sudo installer -pkg "/Unity 6000.0.16f1 (ae37dbaefed8)/Unity-6000.0.16f1.pkg" -target /Applications
 
 # Clean up
 rm -rf /Users/Shared/deploy/install-unity.zip
