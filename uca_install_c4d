@@ -1,27 +1,29 @@
+#!/bin/bash
 
-#!/bin/zsh
+# Set variables 
+C4D_DMG_URL="https://mx-app-blob-prod.maxon.net/mx-package-production/installer/macos/maxon/cinema4d/releases/2025.3.3/Cinema4D_2025_2025.3.3_Mac.dmg"
+DMG_NAME="Cinema4D_2025.3.3.dmg"
+MOUNT_POINT="/Volumes/Cinema4D"
 
-#install Cinema 4D
+# Download the installer DMG
+echo "Downloading Cinema 4D 2025.3.3 installer..."
+curl -L "$C4D_DMG_URL" -o "$DMG_NAME"
 
-mkdir /Users/Shared/deploy
-chmod 777 /Users/Shared/deploy
-cd /Users/Shared/deploy
+# Mount the DMG file
+echo "Mounting DMG..."
+hdiutil attach "$DMG_NAME"
 
-#download archive
-curl http://ucahub/c4d.zip --output c4d.zip
+# Wait to ensure mounting is complete
+sleep 3
 
-#unzip archive
+# Run the silent installer inside the mounted volume
+INSTALLER_NAME="Cinema 4D 2025.3.3 Installer.app"
+sudo "$MOUNT_POINT/$INSTALLER_NAME/Contents/MacOS/installbuilder.sh" --mode unattended --unattendedmodeui none
 
-unzip /Users/Shared/deploy/c4d.zip
+# Unmount the DMG
+hdiutil detach "$MOUNT_POINT"
 
-#install
+# Remove the downloaded DMG
+rm "$DMG_NAME"
 
-zsh /Users/Shared/deploy/Maxon\ Cinema\ 4D\ Installer.app/Contents/MacOS/installbuilder.sh --mode unattended --unattendedmodeui none
 
-#cleanup
-
-rm -rf /Users/Shared/deploy/__MACOSX
-rm -rf /Users/Shared/deploy/Maxon\ Cinema\ 4D\ Installer.app
-rm /Users/Shared/deploy/c4d.zip
-
-exit 0
