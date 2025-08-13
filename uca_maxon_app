@@ -15,7 +15,7 @@ unzip /Users/Shared/deploy/maxonApp.zip
 
 #install
 
-/Users/Shared/deploy/Maxon\ App\ Installer.app/Contents/Scripts/install.sh --skipMaxonAppGui
+/Users/Shared/deploy/Maxon\ App\ Installer.app/Contents/MacOS/installbuilder.sh --prefix /Applications/MaxonApp --mode unattended --unattendedmodeui none
 
 #cleanup
 
