@@ -16,7 +16,7 @@ sudo /Volumes/Darwin/AdODIS-installer.app/Contents/MacOS/installbuilder.sh --mod
 
 hdiutil detach /Volumes/Darwin 
 
-curl http://ucahub/maya.zip --output maya.zip
+curl -fL -C - --retry 3 --retry-delay 5 -o maya.zip "http://ucahub/maya.zip"
 
 unzip /Users/Shared/deploy/maya.zip
 
